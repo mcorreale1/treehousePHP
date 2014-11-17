@@ -1,0 +1,27 @@
+@media screen and (max-width: 660px){
+	.wrapper {
+		max-width: 100%;
+	}
+	.header .nav {
+		clear: left;
+		float: center;
+		max-width: 100%;
+		padding: 0;
+	}
+	.banner{
+		background: none;
+	}
+	.header .branding-title {
+		float: center;
+		width: 122px;
+		margin: 5px 40% 5px 40%; 
+		
+	}
+	.header .nav li {
+		float: center;
+		width: 50px;
+		margin-left: 5%;
+		padding:;
+
+	}
+}
