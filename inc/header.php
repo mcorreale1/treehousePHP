@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700" type="text/css">
 	<link rel="stylesheet" href="css/reactive.css" type="text/css">
 	<link rel="shortcut icon" href="favicon.ico">
-	<meta name="viewport" content="width=device.width, inital-scale=1.0">
+	<meta name="viewport" content="width=device-width, inital-scale=1.0">
 </head>
 <body>
 

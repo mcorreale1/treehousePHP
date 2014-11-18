@@ -1,6 +1,18 @@
 <?php
-$today = "monday";
+	$flavors = array("Vanilla","Chocolate","Strawberry");
+	$country = array(
+		//key,    Value
+		"code" => "US",
+		"name" => "United States"
+	);
+	
+
 ?>
-<ul>
-	<li><?php echo $productName; ?> - Price: <?php echo $productPrice ?></li>
-</ul>
+<html>
+	<body>
+	<?php foreach ($flavors as $flavor) { ?>
+			<div><?php echo $flavor; ?></div>
+		<?php } ?>
+	 <div><?php echo $country["code"]; ?></div>
+</body>
+</html>
