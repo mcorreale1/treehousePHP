@@ -29,6 +29,7 @@
 		left: 0;
 		height: 60px;
 		background: #f16702;
+<<<<<<< Updated upstream
 	}
 
 
@@ -49,6 +50,28 @@
 		text-align: center;
 		height: 100%;
 	}
+=======
+	}
+
+
+	.header .nav li {
+		position: relative;
+		float: left;
+		width: 20%;
+		margin-right: 5%;
+		margin-left: 0;
+		height: 100%;
+		bottom: 30%;
+		
+	}
+	.header .nav li a {
+		padding: 0px;
+		width: 100%;	
+		margin-left: 0%;
+		text-align: center;
+		height: 100%;
+	}
+>>>>>>> Stashed changes
 	.header .nav li.cart{
 		float: right;
 		width: 20%;
@@ -58,6 +81,12 @@
 	.header .nav li.cart a {
 		margin-left: 0px;
 		width: 122px;
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+		margin: 5px auto 5px; 
+=======
+>>>>>>> Stashed changes
 	}
 	.header .nav li.cart a:hover {
 		display: none;
@@ -83,6 +112,10 @@
 		float: center;
 		width: 41%;
 		margin-left: 2%;
+<<<<<<< Updated upstream
+=======
+>>>>>>> FETCH_HEAD
+>>>>>>> Stashed changes
 		
 	}
 	.section.shirts ul.products li a {
@@ -100,6 +133,29 @@
 		margin-top: -20px;
 	}
 	.header .nav li {
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+		float: center;
+		width: 50px;
+		margin-left: 5%;
+		padding:;
+	}
+	.wrapper h1, .section.page p {
+		width: 90%;
+		margin: 10px 5%;
+		text-align: center;
+	}
+	form, form table{
+		width: 90%;
+		margin: 10px 5%;
+	}
+	form input[type="submit"] {
+		margin: 10px auto;
+		width: 100%;
+		padding: 20px;
+=======
+>>>>>>> Stashed changes
 		float: left;
 		width: 20%;
 		margin-right: 5px;
@@ -109,6 +165,10 @@
 		height: 1300px;
 		width: 100%;
 		display: inline-block;
+<<<<<<< Updated upstream
+=======
+>>>>>>> FETCH_HEAD
+>>>>>>> Stashed changes
 	}
 	.section.shirts ul.products li {
 		width: 70%;
