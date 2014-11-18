@@ -1,4 +1,6 @@
-<?php $pageTitle="Tshirts 4 Mike";
+<?php
+$pageTitle="Tshirts 4 Mike";
+$section ="index";
 include('inc/header.php'); ?>
 
 		<div class="section banner">
@@ -17,9 +19,7 @@ include('inc/header.php'); ?>
 		</div>
 
 		<div class="section shirts latest">
-
 			<div class="wrapper">
-
 				<h2>Mike&rsquo;s Latest Shirts</h2>
 
 				<ul class="products">
