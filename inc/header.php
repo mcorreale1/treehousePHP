@@ -5,7 +5,11 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700" type="text/css">
 	<link rel="stylesheet" href="css/reactive.css" type="text/css">
 	<link rel="shortcut icon" href="favicon.ico">
+<<<<<<< HEAD
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+=======
+	<meta name="viewport" content="width=device-width, inital-scale=1.0">
+>>>>>>> origin/master
 </head>
 <body>
 
