@@ -2,23 +2,28 @@
 	/*
 		FUCKING WITH THE HEADER
 	*/
-
-	.wrapper {
-		max-width: 100%;
+	#content {
+		margin-top: -20px;
+		padding-top: 10px;
 	}
 	.header  {
+		width: 100%;
 		border-bottom: none;
 		height: 160px;
 	}
-	.header .branding-title {
-		float: center;
-		clear: left;
-		width: 122px;
-		margin:0 30%;
-		height: 100px;
+	.wrapper {
+		width: 100%;
 	}
 	.header h1.branding-title {
+		float: center;
+		display: block;
+		width: 122px;
+		height: 90px;
+		margin: 5px auto;
 		padding: 0;
+	}
+	.header h1.branding-title a{
+		height: 100%;
 	}
 	.header .nav {
 		clear: left;
@@ -29,68 +34,38 @@
 		left: 0;
 		height: 60px;
 		background: #f16702;
-<<<<<<< Updated upstream
 	}
-
 
 	.header .nav li {
 		position: relative;
-		float: left;
+		float: center;
 		width: 20%;
-		margin-right: 5%;
-		margin-left: 0;
-		height: 100%;
-		bottom: 30%;
-		
+		margin:0;
+		padding-right: 4%;
+		height: 60px;
 	}
 	.header .nav li a {
+		display: inline-block;
 		padding: 0px;
 		width: 100%;	
 		margin-left: 0%;
 		text-align: center;
 		height: 100%;
 	}
-=======
-	}
 
-
-	.header .nav li {
-		position: relative;
-		float: left;
-		width: 20%;
-		margin-right: 5%;
-		margin-left: 0;
-		height: 100%;
-		bottom: 30%;
-		
-	}
-	.header .nav li a {
-		padding: 0px;
-		width: 100%;	
-		margin-left: 0%;
-		text-align: center;
-		height: 100%;
-	}
->>>>>>> Stashed changes
 	.header .nav li.cart{
-		float: right;
-		width: 20%;
-		border-width: 0; 
-		margin-left: 0px;
+		margin-left: 0;
+		border: none;
+		padding-right: 0%;
+		width: 25%;
 	}
-	.header .nav li.cart a {
-		margin-left: 0px;
-		width: 122px;
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-		margin: 5px auto 5px; 
-=======
->>>>>>> Stashed changes
+
+	.header .nav li.cart a{
+		background-image: none;
+		width: 100%;
+		color: #fff;
 	}
-	.header .nav li.cart a:hover {
-		display: none;
-	}
+	.header .nav li.cart a:hover {color: #FFE200;}
 	/*
 		MAIN BODY
 	*/
@@ -102,7 +77,7 @@
 		display: none;
 	}
 	.section.shirts ul.products{
-		height: 650px;
+		height: auto;
 		width: 100%;
 		float: center;
 	}
@@ -112,10 +87,6 @@
 		float: center;
 		width: 41%;
 		margin-left: 2%;
-<<<<<<< Updated upstream
-=======
->>>>>>> FETCH_HEAD
->>>>>>> Stashed changes
 		
 	}
 	.section.shirts ul.products li a {
@@ -125,50 +96,38 @@
 	}
 	.header .nav li.shirts a {background: none;}
 	.header .nav li.contact a {background: none;}
-
-
-}
-@media screen and (max-width: 440px){
-	#content {
-		margin-top: -20px;
-	}
-	.header .nav li {
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-		float: center;
-		width: 50px;
-		margin-left: 5%;
-		padding:;
-	}
 	.wrapper h1, .section.page p {
 		width: 90%;
 		margin: 10px 5%;
 		text-align: center;
 	}
 	form, form table{
-		width: 90%;
-		margin: 10px 5%;
+		width: 80%;
+		margin: 10px auto;
 	}
 	form input[type="submit"] {
-		margin: 10px auto;
-		width: 100%;
+		width: 80%;
+		margin: 10px 10%;
 		padding: 20px;
-=======
->>>>>>> Stashed changes
-		float: left;
-		width: 20%;
-		margin-right: 5px;
 	}
 
+
+}
+@media screen and (max-width: 530px){
+	
+	.header .nav li.cart {
+		
+		position: relative;
+		float: center;
+		width: 19%;
+		margin:0;
+		height: auto;
+		padding-right: 5%;
+	}
 	.section.shirts ul.products{
-		height: 1300px;
+		height: auto;
 		width: 100%;
 		display: inline-block;
-<<<<<<< Updated upstream
-=======
->>>>>>> FETCH_HEAD
->>>>>>> Stashed changes
 	}
 	.section.shirts ul.products li {
 		width: 70%;
@@ -176,4 +135,24 @@
 		float: left;
 		margin-right: 10%;
 		margin-left: 10%;
-}
+	}
+	.wrapper h1, .section.page p {
+		width: 90%;
+		margin: 10px 5%;
+		text-align: center;
+	}
+	.section.shirts.page ul {
+		height: auto;
+	}
+
+	}
+	form, form table{
+		width: 96%;
+		margin: 10px 2%;
+	}
+	form input[type="submit"] {
+		margin: 10px auto;
+		width: 100%;
+		padding: 20px;
+	}
+} 

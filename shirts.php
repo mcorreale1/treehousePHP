@@ -1,29 +1,25 @@
-<?php 
-
-$products = array();
-//adds individual items to array
-//number in [] is the key, a unique identifier 
-$products[101] = "Logo Shirt, Red";
-$products[102] = "Mike The Frog Shirt, Black";
-$products[103] = "Mike The Frog Shirt, Blue";
-$products[104] = "Logo Shirt, Green";
-
+<?php include("inc/products.php");
 $pageTitle = "Shirts";
 $section = "shirts";
 include('inc/header.php'); ?>
 
-	<div class="section page">
+	<div class="section shirts page">
 
 		<div class="wrapper">
 
 			<h1>Mike&rsquo;s Full Catalog of Shirts</h1>
 
-			<ul>
-				<?php foreach ($products as $product) { ?>
-					
-					<li><?php echo $product; ?></li>
-
-				<?php } ?>
+			<ul class="products"> 
+				<?php foreach ($products as $product_id => $product) { 
+					echo "<li>";
+					echo '<a href="shirt.php?id=' . $product_id . '"">';
+							//Concat strings
+					echo '<h3>'.$product["name"].'</h3>';
+					echo '<img src="'.$product["img"].'" alt="'.  '">';
+					echo "<p>View Details</p>";
+					echo "</a>";
+					echo "</li>"; 
+				} ?>
 			</ul>
 
 
