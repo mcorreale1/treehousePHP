@@ -1,4 +1,5 @@
 <?php
+include('inc/products.php');
 $pageTitle="Tshirts 4 Mike";
 $section ="index";
 include('inc/header.php'); ?>
@@ -23,26 +24,23 @@ include('inc/header.php'); ?>
 				<h2>Mike&rsquo;s Latest Shirts</h2>
 
 				<ul class="products">
-					<li><a href="#">
-							<img src="img/shirts/shirt-108.jpg">
-							<p>View Details</p>
-						</a>
-					</li><li>
-						<a href="#">
-							<img src="img/shirts/shirt-107.jpg">
-							<p>View Details</p>
-						</a>
-					</li><li>
-						<a href="#">
-							<img src="img/shirts/shirt-106.jpg">
-							<p>View Details</p>
-						</a>
-					</li><li>
-						<a href="#">
-							<img src="img/shirts/shirt-105.jpg">
-							<p>View Details</p>
-						</a>
-					</li>								
+					<?php 
+						$total_products = count($products);
+						$position = 0;
+						$list_view_html = "";
+
+						foreach ($products as $product_id => $product) {
+							//increments
+							$position = $position + 1; 
+
+							//only will print out last 4 values
+							if($total_products - $position < 4){
+								//adds each value to the beginning of the string
+								$list_view_html = get_list_view_html($product_id, $product) . $list_view_html;
+							}
+						} 
+						echo $list_view_html;
+					?>							
 				</ul>
 
 			</div>

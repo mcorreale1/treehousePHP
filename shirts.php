@@ -11,21 +11,9 @@ include('inc/header.php'); ?>
 
 			<ul class="products"> 
 				<?php foreach ($products as $product_id => $product) { 
-					echo "<li>";
-					echo '<a href="shirt.php?id=' . $product_id . '"">';
-							//Concat strings
-					echo '<h3>'.$product["name"].'</h3>';
-					echo '<img src="'.$product["img"].'" alt="'.  '">';
-					echo "<p>View Details</p>";
-					echo "</a>";
-					echo "</li>"; 
+					echo get_list_view_html($product_id, $product);
 				} ?>
 			</ul>
-
-
-
-
-
 
 		</div>
 
