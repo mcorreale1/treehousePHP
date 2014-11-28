@@ -76,6 +76,7 @@
 	.section.banner .wrapper {
 		display: none;
 	}
+
 	.section.shirts ul.products{
 		height: 650px;
 		width: 100%;
@@ -94,6 +95,34 @@
 		width: 100%;
 		margin: 0;
 	}
+
+	.section.shirt.page .wrapper {
+		width: 100%;
+	}
+
+	.section .breadcrumb {
+		margin-left: 20px;
+		width: 160px;
+		margin-right: 0;
+		display: inline-block;
+		}
+
+	.shirt-picture{
+		display: block;
+		float: center;
+		clear: right;
+		width: auto;
+		margin: 0 10%;
+	}
+
+	.shirt-details{
+		width: 80%;
+		margin: 0 10%;
+	}
+	.shirt-details h1{
+		text-align: center;
+	}
+
 	.header .nav li.shirts a {background: none;}
 	.header .nav li.contact a {background: none;}
 	.wrapper h1, .section.page p {

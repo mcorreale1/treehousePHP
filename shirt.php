@@ -21,7 +21,7 @@ $pageTitle = $product["name"];
 include("inc/header.php");
 ?>
 	
-	<div class="section page">
+	<div class="section shirt page">
 		<div class="wrapper">
 
 			<div class="breadcrumb">
