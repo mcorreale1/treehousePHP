@@ -2,21 +2,70 @@
 //browsers interpret output as HTML as default sothis allows "\n"
 //wrapping the php in a <pre> tab does this
 // TAKES THE name ATTRIBUTE OF THE HTML ELEMENT
-
-
 	//only executes when POST action is sent to it
-	$name;
-	if($_SERVER["REQUEST_METHOD"]=="POST"){
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+	$name = trim($_POST["name"]);
+	$email = trim($_POST["email"]);
+	$message = trim($_POST["message"]);
 
-		$name = $_POST["name"];
-		$email = $_POST["email"];
-		$message = $_POST["message"];
-		$email_body = 
-			"Name: ".$name."\n"
-			."Email: ".$email."\n"
-			."Message: ".$message."\n";
+	if($name == "" OR $email == "" OR $message ==""){
+		echo "You must specify a name, email, and message.";
+		exit;
+	}
 
-		// TODO : send email
+	foreach ($_POST as $value) {
+		if( stripos($value, 'Content-Type:') !== FALSE){
+			echo "There was a problem with the information you entered";
+			exit;
+		}
+	}
+
+	if(trim($_POST["address"]) != ""){
+		echo "Error, please try again";
+		exit;
+	}
+
+	//inclues the mailing class
+	require_once('PHPMailer/class.phpmailer.php');
+
+	//Creates an is_object(var)
+	$mail = new PHPMailer();
+
+	// USE -> to call methods,s checks if Email is valid, but inverted
+	if(!$mail->ValidateAddress($email)){
+		echo "You must specify a valid email address";
+	}
+
+	$email_body = 
+		"Name: ".$name."<br>"
+		."Email: ".$email."<br>"
+		."Message: ".$message;
+	//Set an alternative reply-to address
+	//Not needed because browers default to who it was set from
+		//$mail->addReplyTo($email, $name);
+		
+	//Set who the message is to be sent from
+	$mail->setFrom($email, $name);
+
+	//Set who the message is to be sent to
+	$address = "orders@shirts4mike.com";
+
+	$mail->addAddress($address, 'Michael Correale');
+
+	//Set the subject line
+	$mail->Subject = "Shirts 4 mike contact form submission | ".$name;
+
+	//sets body for email	
+	$mail->msgHTML($email_body);
+	//Attach an image file
+		//$mail->addAttachment('images/phpmailer_mini.png');
+	//send the message, check for errors
+
+	//Runs the method, then check if it fits conditional
+	if (!$mail->send()) {
+	    echo "Mailer Error: " . $mail->ErrorInfo;
+	    exit;
+	}
 	
 	//accessable through $_GET["status"]
 		//status is the variable and thanks is what it holds
@@ -73,6 +122,15 @@ include('inc/header.php'); ?>
 						</th>
 						<td>
 							<textarea type="text" name="message" id="message"></textarea> 
+						</td>
+					</tr>
+					<tr style="display: none;">
+						<th>
+							<label for="address">Address </label>
+						</th>
+						<td>
+							<textarea type="text" name="address" id="address"></textarea>
+							<p>NOT FOR HUMAN EYES, if you can see this LEAVE IT EMPTY</p> 
 						</td>
 					</tr>
 				</table>
