@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="css/reactive.css" type="text/css">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="viewport" content="width=device-width, inital-scale=1.0">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 </head>
 <body>
 
@@ -18,9 +18,8 @@
 
 			<ul class="nav">
 				<li class="shirts <?php if($section == "shirts"){echo "on";} ?>"><a href="shirts.php">Shirts</a></li>
-				<li class="info <?php if($section == "info"){echo "on";} ?>"><a href="info.php">Info</a></li>
 				<li class="contact <?php if($section == "contact"){echo "on";} ?>"><a href="contact.php">Contact</a></li>
-				<li class="cart"><a href="#">Cart</a></li>
+				<li class="cart"><a href="receipt.php">Cart</a></li>
 
 			</ul>
 

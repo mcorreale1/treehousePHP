@@ -9,20 +9,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	$message = trim($_POST["message"]);
 
 	if($name == "" OR $email == "" OR $message ==""){
-		echo "You must specify a name, email, and message.";
-		exit;
+		$error_message = "You must specify a name, email, and message.";
 	}
 
 	foreach ($_POST as $value) {
 		if( stripos($value, 'Content-Type:') !== FALSE){
-			echo "There was a problem with the information you entered";
-			exit;
+			$error_message = "There was a problem with the information you entered";
 		}
 	}
 
 	if(trim($_POST["address"]) != ""){
-		echo "Error, please try again";
-		exit;
+		$error_message = "Error, please try again";
 	}
 
 	//inclues the mailing class
@@ -33,51 +30,55 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 	// USE -> to call methods,s checks if Email is valid, but inverted
 	if(!$mail->ValidateAddress($email)){
-		echo "You must specify a valid email address";
+		$error_message = "You must specify a valid email address";
 	}
+	//checks for errors, if there isnt then it runs
+	if(!isset($error_message)){
+		$email_body = 
+			"Name: ".$name."<br>"
+			."Email: ".$email."<br>"
+			."Message: ".$message;
+		//Set an alternative reply-to address
+		//Not needed because browers default to who it was set from
+			//$mail->addReplyTo($email, $name);
+	
+		//Set who the message is to be sent from
+		$mail->setFrom($email, $name);
+	
+		//Set who the message is to be sent to
+		$address = "orders@shirts4mike.com";
+	
+		$mail->addAddress($address, 'Michael Correale');
+	
+		//Set the subject line
+		$mail->Subject = "Shirts 4 mike contact form submission | ".$name;
+	
+		//sets body for email	
+		$mail->msgHTML($email_body);
+		//Attach an image file
+			//$mail->addAttachment('images/phpmailer_mini.png');
+		//send the message, check for errors
+	
+		//Runs the method, then check if it fits conditional
+		if ($mail->send()) {
+			//accessable through $_GET["status"]
+			//status is the variable and thanks is what it holds
+			header("location: contact.php?status=thanks&name=$name");
+			exit;
 
-	$email_body = 
-		"Name: ".$name."<br>"
-		."Email: ".$email."<br>"
-		."Message: ".$message;
-	//Set an alternative reply-to address
-	//Not needed because browers default to who it was set from
-		//$mail->addReplyTo($email, $name);
+		}
+		else {
+		    $error_message = "There was a problem: " . $mail->ErrorInfo;
+		}
 		
-	//Set who the message is to be sent from
-	$mail->setFrom($email, $name);
-
-	//Set who the message is to be sent to
-	$address = "orders@shirts4mike.com";
-
-	$mail->addAddress($address, 'Michael Correale');
-
-	//Set the subject line
-	$mail->Subject = "Shirts 4 mike contact form submission | ".$name;
-
-	//sets body for email	
-	$mail->msgHTML($email_body);
-	//Attach an image file
-		//$mail->addAttachment('images/phpmailer_mini.png');
-	//send the message, check for errors
-
-	//Runs the method, then check if it fits conditional
-	if (!$mail->send()) {
-	    echo "Mailer Error: " . $mail->ErrorInfo;
-	    exit;
 	}
-	
-	//accessable through $_GET["status"]
-		//status is the variable and thanks is what it holds
-	header("location: contact.php?status=thanks&name=$name");
-	
-	//immediatly stop all PHP processes	
-	exit;
 
 	/*********************
 	$_GET[] SENDS VARIABLES THROUGH URL (status=thanks)
 	$_POST[] SENDS VARIABLES THROUGH HTTP PROTOCAL	
 	*********************/
+
+	//end of VERY FIRST conditional
 }
 
 ?>
@@ -85,7 +86,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 $section = "contact";
 include('inc/header.php'); ?>
 	<div class="section page">
-		<div class="wrapper":>
+		<div class="wrapper">
 			<h1>Contact page</h1>
 				<!-- isset() checks if it exists-->
 			<?php if(isset($_GET["status"]) AND $_GET["status"] == "thanks") { ?>
@@ -95,6 +96,14 @@ include('inc/header.php'); ?>
 			else { ?>
  
 			<p>I'd love to hear from you! Contact me </p>
+
+			<!--Checks if theres an Error message and displays it-->
+
+			<?php 
+			if(isset($error_message)){
+				echo '<p class="message">'.$error_message.'</p>';
+			}
+			?>
 
 			<!-- Send this form to PHP file in action attribute -->
 			<form method="post" action="contact.php">

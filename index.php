@@ -21,7 +21,7 @@ include('inc/header.php'); ?>
 
 		<div class="section shirts latest">
 			<div class="wrapper">
-				<h2>Mike&rsquo;s Latest Shirts</h2>
+				<h1>Mike&rsquo;s Latest Shirts</h1>
 
 				<ul class="products">
 					<?php 

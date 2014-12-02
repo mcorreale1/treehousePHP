@@ -8,7 +8,7 @@
 				<li><a href="http://twitter.com/treehouse">Twitter</a></li>
 				<li><a href="https://www.facebook.com/TeamTreehouse">Facebook</a></li>
 			</ul>
-
+			<br>
 			<p>&copy;<?php echo date('Y'); ?> Shirts 4 Mike</p>
 
 		</div>

@@ -7,7 +7,7 @@ include('inc/header.php'); ?>
 
 		<div class="wrapper">
 
-			<h1>Mike&rsquo;s Full Catalog of Shirts</h1>
+			<h1>Mike&rsquo;s Full Catalog</h1>
 
 			<ul class="products"> 
 				<?php foreach ($products as $product_id => $product) { 
