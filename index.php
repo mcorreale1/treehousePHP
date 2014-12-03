@@ -10,7 +10,7 @@ include('inc/header.php'); ?>
 
 				<img class="hero" src="img/mike-the-frog.png" alt="Mike the Frog says:">
 				<div class="button">
-					<a href="#">
+					<a href="shirts.php">
 						<h2>Hey, I&rsquo;m Mike!</h2>
 						<p>Check Out My Shirts</p>
 					</a>

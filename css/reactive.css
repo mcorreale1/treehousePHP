@@ -1,42 +1,58 @@
-@media screen and (min-width: 661px){
-	/* 
-	Fixing Default settings in
-	main desktop display
-	*/
-	body {
-		width: 100%;
-	}
 
-	.wrapper{
-		width: 100%;
-	}
-
-	.header .nav {
-		width: 500px;
-	}
-	.header .nav li {
-		float: right;
-		width: 140px;
-	}
-
-	.header .nav li.cart{
-		margin-left: 0px;
-	}
-
-	.footer {
-		float: left;
-		padding-left: 50px;
-	}
-
-	.footer p {
-		margin-top: 10px;
-		text-align: left;
-		width: 200px;
-		margin-left: 4px;
-	}
+body {
+	width: 100%;
 }
 
-@media screen and (max-width: 660px){
+.wrapper{
+	width: 100%;
+}
+
+.header .nav {
+	width: 435px;
+	float: right;
+	left: 0;
+}
+.header .nav li {
+	float: left;
+	width: 140px;
+}
+
+.header .nav li.cart{
+	margin-left: 0px;
+}
+
+.section.shirts.latest h1 {
+	text-align: center;
+}
+
+.section.shirts ul.products {
+	margin-bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.section.shirts ul.products li {
+	left: 0;
+	float: center;
+	margin: 0 2% 10px 0;
+	
+}
+
+.footer {
+	float: left;
+	padding-left: 50px;
+}
+
+.footer p {
+	margin-top: 10px;
+	text-align: left;
+	width: 200px;
+	margin-left: 4px;
+}
+
+
+
+@media screen and (max-width: 793px){
 	/*
 		FUCKING WITH THE HEADER
 	*/
@@ -121,10 +137,6 @@
 		display: none;
 	}
 
-	.section.shirts ul.products{
-		width: 100%;
-	}
-
 	.section.shirts.latest {
 		padding:34px 0;	
 	}
@@ -132,12 +144,20 @@
 	.section.shirts.latest h1{
 		margin-bottom: 30px;
 	}
+
+	.section.shirts ul.products{
+		text-align: center;
+		width: 100%;
+	}
+
 	.section.shirts ul.products li {
 		left: 0;
 		float: center;
-		width: 41%;
-		margin-left: 2%;
-		
+		width: 202px;
+		margin: 0 auto 5px;	
+	}
+	.section.shirts ul.products li:nth-child(2n+1){
+		margin-right: 5%;
 	}
 	.section.shirts ul.products li a {
 		left: 0;
@@ -216,11 +236,11 @@
 	.section.shirts ul.products{
 		width: 100%;
 		display: inline-block;
+		text-align: center;
 	}
 	.section.shirts ul.products li {
-		display: block;
-		width: 280px;
-		float: center;
+		display: inline-block;
+		width: 240px;
 		margin: 0 auto 10px;
 
 	}

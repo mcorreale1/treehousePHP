@@ -87,65 +87,67 @@ $section = "contact";
 include('inc/header.php'); ?>
 	<div class="section page">
 		<div class="wrapper">
-			<h1>Contact page</h1>
-				<!-- isset() checks if it exists-->
-			<?php if(isset($_GET["status"]) AND $_GET["status"] == "thanks") { ?>
-				<p> Thanks for the email, <?php echo $_GET["name"]; ?>! </p>
+			<div class="form">
+				<h1>Contact Mike!</h1>
+					<!-- isset() checks if it exists-->
+				<?php if(isset($_GET["status"]) AND $_GET["status"] == "thanks") { ?>
+					<p> Thanks for the email, <?php echo $_GET["name"]; ?>! </p>
 
-			<?php } 
-			else { ?>
- 
-			<p>I'd love to hear from you! Contact me </p>
+				<?php } 
+				else { ?>
+	 
+				<p>I'd love to hear from you! Contact me </p>
 
-			<!--Checks if theres an Error message and displays it-->
+				<!--Checks if theres an Error message and displays it-->
 
-			<?php 
-			if(isset($error_message)){
-				echo '<p class="message">'.$error_message.'</p>';
-			}
-			?>
+				<?php 
+				if(isset($error_message)){
+					echo '<p class="message">'.$error_message.'</p>';
+				}
+				?>
 
-			<!-- Send this form to PHP file in action attribute -->
-			<form method="post" action="contact.php">
+				<!-- Send this form to PHP file in action attribute -->
+				<form method="post" action="contact.php">
 
-				<table>
-					<tr>
-						<th>
-							<label for="name">Name </label>
-						</th>
-						<td>
-							<input type="text" name="name" id="name">
-						</td>
-					</tr>
-					<tr>
-						<th>
-							<label for="email">Email </label>
-						</th>
-						<td>
-							<input type="text" name="email" id="email">
-						</td>
-					</tr>
-					<tr>
-						<th>
-							<label for="message">Message </label>
-						</th>
-						<td>
-							<textarea type="text" name="message" id="message"></textarea> 
-						</td>
-					</tr>
-					<tr style="display: none;">
-						<th>
-							<label for="address">Address </label>
-						</th>
-						<td>
-							<textarea type="text" name="address" id="address"></textarea>
-							<p>NOT FOR HUMAN EYES, if you can see this LEAVE IT EMPTY</p> 
-						</td>
-					</tr>
-				</table>
-			<input type="submit" value="send">
-			</form>
-			<?php } ?>
+					<table>
+						<tr>
+							<th>
+								<label for="name">Name </label>
+							</th>
+							<td>
+								<input type="text" name="name" id="name">
+							</td>
+						</tr>
+						<tr>
+							<th>
+								<label for="email">Email </label>
+							</th>
+							<td>
+								<input type="text" name="email" id="email">
+							</td>
+						</tr>
+						<tr>
+							<th>
+								<label for="message">Message </label>
+							</th>
+							<td>
+								<textarea type="text" name="message" id="message"></textarea> 
+							</td>
+						</tr>
+						<tr style="display: none;">
+							<th>
+								<label for="address">Address </label>
+							</th>
+							<td>
+								<textarea type="text" name="address" id="address"></textarea>
+								<p>NOT FOR HUMAN EYES, if you can see this LEAVE IT EMPTY</p> 
+							</td>
+						</tr>
+					</table>
+				<input type="submit" value="send">
+				</form>
+				<?php } ?>
+			</div>
 		</div>
 	</div>
 
