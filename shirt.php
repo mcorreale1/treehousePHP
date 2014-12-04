@@ -1,20 +1,26 @@
 <?php include("inc/products.php"); 
 
-	//checks to see if ID is in URL
+$left_href = "#";
+$right_href= "#";
+
+//checks to see if ID is in URL
 if(isset($_GET["id"])){
-		//gets the ID from the url
+	//gets the ID from the url
 	$product_id = $_GET["id"];
-		//If it is, check to make sure its valid
+	//If it is, check to make sure its valid
 	if(isset($products[$product_id])){
 		$product = $products[$product_id];
 	}	
 }
-	//Check to see if product with the ID is invalid
+//Check to see if product with the ID is invalid
 if(!isset($product)){
 	//If its not, redirect to shirts.php and exit out of code
 	header("Location: shirts.php");
 	exit();
 }
+
+$leftID = $product_id - 1;
+
 
 $section ="shirts";
 $pageTitle = $product["name"];
@@ -63,9 +69,13 @@ include("inc/header.php");
 					</form>
 
 					<p class="note-designer">* All shirts are designed by Mike the Frog</p>
-
 				</div>
-
+		</div>
+		<div class="page left">
+			<span><a href="<?php echo $left_href; ?>">Previous Shirt</a></span>
+		</div>
+		<div class="page right">
+			<span><a href="<?php echo $left_href; ?>">Next Shirt</a></span>
 		</div>
 	</div>	
 

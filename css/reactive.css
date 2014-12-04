@@ -7,8 +7,12 @@ body {
 	width: 100%;
 }
 
+.header h1.branding-title{
+	margin-left: 25px;
+}
+
 .header .nav {
-	width: 435px;
+	width: 420px;
 	float: right;
 	left: 0;
 }
@@ -19,6 +23,7 @@ body {
 
 .header .nav li.cart{
 	margin-left: 0px;
+	width: 124px;
 }
 
 .section.shirts.latest h1 {
@@ -34,9 +39,106 @@ body {
 .section.shirts ul.products li {
 	left: 0;
 	float: center;
-	margin: 0 2% 10px 0;
-	
+	margin: 0 2% 10px 0;	
 }
+
+/*
+	Content page
+*/
+
+.section.page {
+	width: 100%;
+	text-align: center;
+}
+.section.page .form {
+	display: inline-block;
+	text-align: center;
+	float: center;
+	width: 45%;
+	border-right: 5px solid #f16702;
+}
+.section.page .form form {
+	display: inline-block;
+	width: 90%;
+}
+.section.page .form form table {
+	display: inline-table;
+	width: 90%;
+}
+.section.page form input {
+	width: 90%;
+}
+.section.page .info{
+	display: inline-block;
+	float: center;
+	width: 45%;
+	position: relative;
+	vertical-align: top;
+	height: 402px;
+}
+
+/* 
+	Shirt Page 
+*/
+
+.section .breadcrumb {
+	width: 100%;
+	margin-right: 0;
+	margin-left: 20px;
+	display: inline-block;
+	float: left;
+	padding: 0 0 10px 0;
+	text-align: left;
+}
+.section.shirt.page .wrapper{text-align: center;}
+.section.shirt .shirt-picture {
+	display: inline-block;
+	width: 400px;
+	float: none;
+	padding: 0;
+	border: 0;
+	margin-right: 25px;
+}
+.section.shirt .shirt-picture span {
+	width: 372px;
+	border: 14px solid #f0eeed;
+}
+.section.shirt .shirt-details {
+	display: inline-block;
+	width: 400px;
+	height: 419px;
+	float: none;
+	text-align: center;
+	vertical-align: top;
+	clear: right;
+	margin-left: 25px;
+}
+.section.shirt .shirt-details h1 span.price {
+	padding-right: 0;
+	font-size: 28px;
+}
+.section.shirt .page{
+	display: inline-block;
+	width: 300px;
+	height: 40px;
+	margin-top: 10px;
+	background-color: #ff8400;
+}
+.section.shirt .page span {
+	display: inline-block;
+	text-decoration: none;
+	height: 40px;
+	width: 300px;
+	font-size: 18pt;
+}
+.section.shirt .page a{
+	display: inline-block;	
+	text-decoration: none;
+	width: 100%;
+	color: white;
+	padding: 6 0;
+}
+.section.shirt .page a:hover {color:#FFE200;}
 
 .footer {
 	float: left;
@@ -50,8 +152,6 @@ body {
 	margin-left: 4px;
 }
 
-
-
 @media screen and (max-width: 793px){
 	/*
 		FUCKING WITH THE HEADER
@@ -59,12 +159,15 @@ body {
 	#content {
 		margin-top: -20px;
 		padding-top: 10px;
-		}
+	}
 	.header  {
 		width: 100%;
 		border-bottom: none;
 		height: 160px;
 	}
+	.header .nav li.shirts a {background: none;}
+	.header .nav li.contact a {background: none;}
+
 	.wrapper {
 		width: 100%;
 		height: inherit;
@@ -77,9 +180,7 @@ body {
 		margin: 5px auto;
 		padding: 0;
 	}
-	.header h1.branding-title a{
-		height: 100%;
-	}
+	.header h1.branding-title a{height: 100%;}
 	.header .nav {
 		float: left;
 		max-width: 100%;
@@ -157,65 +258,63 @@ body {
 		margin: 0 auto 5px;	
 	}
 	.section.shirts ul.products li:nth-child(2n+1){
-		margin-right: 5%;
+		margin-right: 50px;
 	}
 	.section.shirts ul.products li a {
 		left: 0;
 		width: 100%;
 		margin: 0;
 	}
+	/*
+		Shirt page
+	*/
 
 	.section.shirt.page .wrapper {
 		width: 100%;
 	}
 
-	.section .breadcrumb {
-		margin-left: 20px;
-		width: 160px;
-		margin-right: 0;
-		display: inline-block;
-		}
+	.section.shirt .shirt-picture{
+		width: 295px;
+		margin-right: 0%;
+	}
 
-	.shirt-picture{
-		display: block;
-		float: center;
+	.section.shirt .shirt-details{
 		width: auto;
-		margin: 0 10%;
+		text-align: center;
 	}
-
-	.shirt-details{
-		width: 80%;
-		margin: 0 10%;
-	}
-	.shirt-details h1{
+	.section.shirt .shirt-details h1{
+		width: auto;
 		text-align: center;
 	}
 
-	.header .nav li.shirts a {background: none;}
-	.header .nav li.contact a {background: none;}
-	.wrapper h1, .section.page p {
-		width: 90%;
-		margin: 10px 5%;
+	/* 
+	CONTACT PAGE 
+	*/
+
+	.section.page .form {
+		width: 100%;
+		clear right;
+		float: center;
+		border-right: none;
+	}
+	.section.page .form p.message {
+		width: 80%;
+		margin: 0 auto;
 		text-align: center;
 	}
-	form, form table{
-		width: 80%;
-		margin: 10px auto;
-	}
-	form input[type="submit"] {
-		width: 80%;
-		margin: 10px 10%;
-		padding: 20px;
+	.section.page .info {
+		width: 100%;
+		float: center;
+		margin-top: 40px;
+		height: auto;
 	}
 	.footer{
 		display: block;
 	}
-
 }
 @media screen and (max-width: 530px){
 	
 	.header .nav li.cart {
-		
 		position: relative;
 		float: center;
 		width: 30%;
@@ -242,7 +341,9 @@ body {
 		display: inline-block;
 		width: 240px;
 		margin: 0 auto 10px;
-
+	}
+	.section.shirts ul.products li:nth-child(2n+1){
+		margin-right: 0;
 	}
 	.wrapper h1, .section.page p {
 		width: 90%;

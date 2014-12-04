@@ -148,6 +148,11 @@ include('inc/header.php'); ?>
 				</form>
 				<?php } ?>
 			</div>
+			<div class ="info">
+				<h1>Other ways to contact Mike!</h1>
+				<p> 19 Fishermans Drive</p>
+			</div>
+
 		</div>
 	</div>
 
