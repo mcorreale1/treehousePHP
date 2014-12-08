@@ -152,7 +152,7 @@ body {
 	margin-left: 4px;
 }
 
-@media screen and (max-width: 793px){
+@media screen and (max-width: 852px){
 	/*
 		FUCKING WITH THE HEADER
 	*/
@@ -271,16 +271,22 @@ body {
 
 	.section.shirt.page .wrapper {
 		width: 100%;
+		height: 750px;
 	}
 
 	.section.shirt .shirt-picture{
-		width: 295px;
+		width: 323px;
 		margin-right: 0%;
+		margin: 0 auto;
+	}
+	.section.shirt .shirt-picture span {
+		width: 295px;
 	}
 
 	.section.shirt .shirt-details{
 		width: auto;
 		text-align: center;
+		margin-left: 0;
 	}
 	.section.shirt .shirt-details h1{
 		width: auto;
@@ -360,5 +366,3 @@ body {
 		padding: 20px;
 	}
 }
-
-

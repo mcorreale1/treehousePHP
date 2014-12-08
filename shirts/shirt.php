@@ -1,4 +1,6 @@
-<?php include("inc/products.php"); 
+<?php 
+require_once('../inc/config.php');
+require_once(ROOTPATH . 'inc/products.php'); 
 
 $left_href = "#";
 $right_href= "#";
@@ -15,7 +17,7 @@ if(isset($_GET["id"])){
 //Check to see if product with the ID is invalid
 if(!isset($product)){
 	//If its not, redirect to shirts.php and exit out of code
-	header("Location: shirts.php");
+	header("Location: ".BASEURL."shirts/");
 	exit();
 }
 
@@ -24,18 +26,18 @@ $leftID = $product_id - 1;
 
 $section ="shirts";
 $pageTitle = $product["name"];
-include("inc/header.php");
+include(ROOTPATH."inc/header.php");
 ?>
 	
 	<div class="section shirt page">
 		<div class="wrapper">
 
 			<div class="breadcrumb">
-				<a href="shirts.php">Shirts</a> &gt; <?php echo $product["name"]; ?> </div>
+				<a href="<?php echo BASEURL; ?>shirts/">Shirts</a> &gt; <?php echo $product["name"]; ?> </div>
 
 				<div class="shirt-picture">
 					<span>
-						<img src="<?php echo $product["img"]; ?>" alt="<?php echo $product["name"]; ?>">
+						<img src="<?php echo BASEURL . $product["img"]; ?>" alt="<?php echo $product["name"]; ?>">
 					</span>
 				</div>
 
@@ -79,5 +81,5 @@ include("inc/header.php");
 		</div>
 	</div>	
 
-<?php include("inc/footer.php"); ?>
+<?php include(ROOTPATH."inc/footer.php"); ?>
 

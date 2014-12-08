@@ -1,4 +1,7 @@
 <?php
+
+require_once('../inc/config.php');
+
 //browsers interpret output as HTML as default sothis allows "\n"
 //wrapping the php in a <pre> tab does this
 // TAKES THE name ATTRIBUTE OF THE HTML ELEMENT
@@ -23,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	}
 
 	//inclues the mailing class
-	require_once('PHPMailer/class.phpmailer.php');
+	require_once(ROOTPATH.'/PHPMailer/class.phpmailer.php');
 
 	//Creates an is_object(var)
 	$mail = new PHPMailer();
@@ -63,7 +66,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		if ($mail->send()) {
 			//accessable through $_GET["status"]
 			//status is the variable and thanks is what it holds
-			header("location: contact.php?status=thanks&name=$name");
+			header("location: ".BASEURL."contact/?status=thanks");
 			exit;
 
 		}
@@ -84,7 +87,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 ?>
 <?php $pageTitle = "Contact Mike";
 $section = "contact";
-include('inc/header.php'); ?>
+include(ROOTPATH.'inc/header.php'); ?>
 	<div class="section page">
 		<div class="wrapper">
 			<div class="form">
@@ -107,7 +110,7 @@ include('inc/header.php'); ?>
 				?>
 
 				<!-- Send this form to PHP file in action attribute -->
-				<form method="post" action="contact.php">
+				<form method="post" action="<?php echo BASEURL; ?>contact/">
 
 					<table>
 						<tr>
@@ -115,7 +118,8 @@ include('inc/header.php'); ?>
 								<label for="name">Name </label>
 							</th>
 							<td>
-								<input type="text" name="name" id="name">
+								<input type="text" name="name" id="name" 
+										value="<?php if(isset($name)){echo htmlspecialchars($name);} ?>">
 							</td>
 						</tr>
 						<tr>
@@ -123,7 +127,8 @@ include('inc/header.php'); ?>
 								<label for="email">Email </label>
 							</th>
 							<td>
-								<input type="text" name="email" id="email">
+								<input type="text" name="email" id="email"
+										value="<?php if(isset($email)){echo htmlspecialchars($email);} ?>">
 							</td>
 						</tr>
 						<tr>
@@ -131,7 +136,8 @@ include('inc/header.php'); ?>
 								<label for="message">Message </label>
 							</th>
 							<td>
-								<textarea type="text" name="message" id="message"></textarea> 
+								<textarea type="text" name="message" 
+									id="message"><?php if(isset($message)){echo htmlspecialchars($message);} ?></textarea> 
 							</td>
 						</tr>
 						<tr style="display: none;">
@@ -156,4 +162,4 @@ include('inc/header.php'); ?>
 		</div>
 	</div>
 
-<?php include('inc/footer.php'); ?>
+<?php include(ROOTPATH.'inc/footer.php'); ?>

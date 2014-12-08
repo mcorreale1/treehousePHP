@@ -1,8 +1,9 @@
 <?php
+require_once('inc/config.php');
 include('inc/products.php');
 $pageTitle="Tshirts 4 Mike";
 $section ="index";
-include('inc/header.php'); ?>
+include(ROOTPATH.'inc/header.php'); ?>
 
 		<div class="section banner">
 
@@ -10,7 +11,7 @@ include('inc/header.php'); ?>
 
 				<img class="hero" src="img/mike-the-frog.png" alt="Mike the Frog says:">
 				<div class="button">
-					<a href="shirts.php">
+					<a href="<?php echo BASEURL; ?>shirts/">
 						<h2>Hey, I&rsquo;m Mike!</h2>
 						<p>Check Out My Shirts</p>
 					</a>
@@ -47,4 +48,4 @@ include('inc/header.php'); ?>
 
 		</div>
 
-<?php include('inc/footer.php'); ?>
+<?php include(ROOTPATH.'inc/footer.php'); ?>
