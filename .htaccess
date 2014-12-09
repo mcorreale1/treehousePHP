@@ -1,3 +1,4 @@
 RewriteEngine On
 RewriteRule ^shirts/$ /treehousephp/shirts/shirts.php
 RewriteRule ^shirts/([0-9]+)/$ /treehousephp/shirts/shirt.php?id=$1
+RewriteRule ^contact/$ /treehousephp/contact/contact.php

@@ -1,3 +1,14 @@
+/*********************
+	NOTES
+	$_GET[] SENDS VARIABLES THROUGH URL (?status=thanks)
+	$_POST[] SENDS VARIABLES THROUGH HTTP PROTOCAL	
+	stripos() function prevents attack
+	htmlspecialchars() prevents injection
+*********************/
+
+
+
+
 <pre><?php
 	$flavors = array("Vanilla","Chocolate","Strawberry");
 	$countries = array();

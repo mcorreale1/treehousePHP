@@ -21,8 +21,6 @@ if(!isset($product)){
 	exit();
 }
 
-$leftID = $product_id - 1;
-
 
 $section ="shirts";
 $pageTitle = $product["name"];
