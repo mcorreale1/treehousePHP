@@ -1,6 +1,8 @@
 <?php
 require_once('inc/config.php');
 include('inc/products.php');
+$products = get_products_all();
+$recent = get_products_recent();
 $pageTitle="Tshirts 4 Mike";
 $section ="index";
 include(ROOTPATH.'inc/header.php'); ?>
@@ -26,20 +28,11 @@ include(ROOTPATH.'inc/header.php'); ?>
 
 				<ul class="products">
 					<?php 
-						$total_products = count($products);
-						$position = 0;
 						$list_view_html = "";
-
-						foreach ($products as $product_id => $product) {
-							//increments
-							$position = $position + 1; 
-
-							//only will print out last 4 values
-							if($total_products - $position < 4){
-								//adds each value to the beginning of the string
-								$list_view_html = get_list_view_html($product_id, $product) . $list_view_html;
-							}
-						} 
+						foreach ($recent as $product) {
+							$list_view_html = get_list_view_html($product) . $list_view_html;
+						}
+						 
 						echo $list_view_html;
 					?>							
 				</ul>

@@ -1,26 +1,27 @@
 <?php 
-require_once('../inc/config.php');
-require_once(ROOTPATH . 'inc/products.php'); 
+	require_once('../inc/config.php');
+	require_once(ROOTPATH . 'inc/products.php'); 
+$products = get_products_all();
 
-$left_href = "#";
-$right_href= "#";
+
 
 //checks to see if ID is in URL
 if(isset($_GET["id"])){
-	//gets the ID from the url
-	$product_id = $_GET["id"];
-	//If it is, check to make sure its valid
-	if(isset($products[$product_id])){
-		$product = $products[$product_id];
-	}	
+	//If it is, get product
+	$product = get_product($_GET["id"]);	
 }
 //Check to see if product with the ID is invalid
-if(!isset($product)){
+if($product==false){
 	//If its not, redirect to shirts.php and exit out of code
 	header("Location: ".BASEURL."shirts/");
 	exit();
 }
 
+$left_id = get_next_product($product["sku"], "left");
+$right_id = get_next_product($product["sku"], "right");
+
+$left_href = BASEURL. 'shirts/' . $products[$left_id]["sku"]."/";
+$right_href= BASEURL. 'shirts/' . $products[$right_id]["sku"]."/";
 
 $section ="shirts";
 $pageTitle = $product["name"];
@@ -75,7 +76,7 @@ include(ROOTPATH."inc/header.php");
 			<span><a href="<?php echo $left_href; ?>">Previous Shirt</a></span>
 		</div>
 		<div class="page right">
-			<span><a href="<?php echo $left_href; ?>">Next Shirt</a></span>
+			<span><a href="<?php echo $right_href; ?>">Next Shirt</a></span>
 		</div>
 	</div>	
 

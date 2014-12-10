@@ -7,6 +7,22 @@
 *********************/
 
 
+REWRITE RULES
+
+([0-9]+) selects numbers, accessable by $1
+RewriteCond creates a condition for GET variables
+
+RewriteCond %{QUERY_STRING} ^id=([0-9]+)$
+RewriteRule ^shirt.php$ /shirts/%1/? [R=301]
+
+Creates a condition for get variable ID for shirt page, redirects to the ID number with no text in the url (The /? specifies that)
+
+wrapping php in <pre> allows for things like /n to work
+
+POST
+TAKES THE name ATTRIBUTE OF THE HTML ELEMENT IN THE FORM
+only executes when POST action is sent to it
+
 
 
 <pre><?php
