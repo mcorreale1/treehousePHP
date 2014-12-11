@@ -17,11 +17,11 @@ if($product==false){
 	exit();
 }
 
-$left_id = get_next_product($product["sku"], "left");
-$right_id = get_next_product($product["sku"], "right");
+$next_id = get_next_product($product["sku"]);
+$previous_id = get_previous_product($product["sku"]);
 
-$left_href = BASEURL. 'shirts/' . $products[$left_id]["sku"]."/";
-$right_href= BASEURL. 'shirts/' . $products[$right_id]["sku"]."/";
+$next_href = BASEURL. 'shirts/' . $products[$next_id]["sku"]."/";
+$previous_href= BASEURL. 'shirts/' . $products[$previous_id]["sku"]."/";
 
 $section ="shirts";
 $pageTitle = $product["name"];
@@ -73,10 +73,10 @@ include(ROOTPATH."inc/header.php");
 				</div>
 		</div>
 		<div class="page left">
-			<span><a href="<?php echo $left_href; ?>">Previous Shirt</a></span>
+			<span><a href="<?php echo $previous_href; ?>">Previous Shirt</a></span>
 		</div>
 		<div class="page right">
-			<span><a href="<?php echo $right_href; ?>">Next Shirt</a></span>
+			<span><a href="<?php echo $next_href; ?>">Next Shirt</a></span>
 		</div>
 	</div>	
 

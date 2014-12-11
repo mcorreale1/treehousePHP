@@ -12,7 +12,7 @@ body {
 }
 
 .header .nav {
-	width: 420px;
+	width: 560px;
 	float: right;
 	left: 0;
 }
@@ -167,7 +167,7 @@ body {
 	}
 	.header .nav li.shirts a {background: none;}
 	.header .nav li.contact a {background: none;}
-
+	.header .nav li.search a {background: none;}
 	.wrapper {
 		width: 100%;
 		height: inherit;
@@ -194,7 +194,7 @@ body {
 	.header .nav li {
 		position: relative;
 		float: center;
-		width: 30%;
+		width: 22%;
 		margin: 0;
 		height: 60px;
 		padding-right: 3%;
@@ -214,7 +214,7 @@ body {
 		margin-left: 0;
 		border: none;
 		padding-right: 0%;
-		width: 31%;
+		width: 23%;
 	}
 
 	.header .nav li.cart a{
@@ -323,10 +323,10 @@ body {
 	.header .nav li.cart {
 		position: relative;
 		float: center;
-		width: 30%;
 		margin:0;
 		height: 100%;
 		padding-right: 0%;
+		width: 21%;
 	}
 	
 	.section{

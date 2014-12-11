@@ -19,6 +19,8 @@
 			<ul class="nav">
 				<li class="shirts <?php if($section == "shirts"){echo "on";} ?>"><a href="<?php echo BASEURL; ?>shirts/">Shirts</a></li>
 				<li class="contact <?php if($section == "contact"){echo "on";} ?>"><a href="<?php echo BASEURL; ?>contact/">Contact</a></li>
+				<li class="search <?php if($section == "search"){echo "on";} ?>"><a href="<?php echo BASEURL; ?>search/">Search</a></li>
+
 				<li class="cart"><a href="<?php echo BASEURL; ?>receipt/">Cart</a></li>
 
 			</ul>
