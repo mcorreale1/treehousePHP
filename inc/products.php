@@ -69,6 +69,17 @@ function get_next_product($product_id){
     }
 }
 
+function get_products_search($s){
+    $all = get_products_all();
+    $results = array();
+
+    foreach ($all as $product) {
+        //MAKE A SEARCH ALGORITHM
+        $results[] = $product;
+    }
+    return $results;
+}
+
 function get_products_all(){
     $products = array();
     $products[101] = array(

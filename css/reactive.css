@@ -1,12 +1,16 @@
 
 body {
 	width: 100%;
+
 }
 
 .wrapper{
 	width: 100%;
 }
 
+/*
+	Header
+*/
 .header h1.branding-title{
 	margin-left: 25px;
 }
@@ -26,6 +30,24 @@ body {
 	width: 124px;
 }
 
+/*
+	Main page
+*/
+
+.section.banner .wrapper img.hero{
+	top: 0px;
+	height: 290px;
+}
+.section.banner .wrapper .button {
+	height: 80px;
+	left: 420px;
+	top: 131px;
+}
+
+/*
+	Shirts page
+*/
+
 .section.shirts.latest h1 {
 	text-align: center;
 }
@@ -43,7 +65,7 @@ body {
 }
 
 /*
-	Content page
+	Contact page
 */
 
 .section.page {
@@ -65,7 +87,7 @@ body {
 	display: inline-table;
 	width: 90%;
 }
-.section.page form input {
+.section.page .form form input {
 	width: 90%;
 }
 .section.page .info{
@@ -140,9 +162,20 @@ body {
 }
 .section.shirt .page a:hover {color:#FFE200;}
 
+/* 
+	Footer
+*/
+
 .footer {
-	float: left;
-	padding-left: 50px;
+	padding: 0;
+	height: 120px;
+	clear: both;
+	width: 100%;
+} 
+
+.footer .wrapper{
+	padding:24px 0px 24px 50px;
+	width: auto;
 }
 
 .footer p {
@@ -181,6 +214,7 @@ body {
 		padding: 0;
 	}
 	.header h1.branding-title a{height: 100%;}
+
 	.header .nav {
 		float: left;
 		max-width: 100%;
@@ -194,10 +228,10 @@ body {
 	.header .nav li {
 		position: relative;
 		float: center;
-		width: 22%;
+		width: 24%;
 		margin: 0;
 		height: 60px;
-		padding-right: 3%;
+		
 	}
 	.header .nav li a {
 		display: inline-block;
@@ -214,7 +248,7 @@ body {
 		margin-left: 0;
 		border: none;
 		padding-right: 0%;
-		width: 23%;
+		width: 24.5%;
 	}
 
 	.header .nav li.cart a{
@@ -226,6 +260,12 @@ body {
 	/*
 		MAIN BODY
 	*/
+
+	.wrapper h1, .section.page p {
+		width: 90%;
+		margin: 0px 5%;
+		text-align: center;
+	}
 
 	.section {
 		height: auto;
@@ -255,11 +295,11 @@ body {
 		left: 0;
 		float: center;
 		width: 202px;
-		margin: 0 auto 5px;	
+		margin: 0 10px 5px;	
 	}
-	.section.shirts ul.products li:nth-child(2n+1){
+/*	.section.shirts ul.products li:nth-child(2n+1){
 		margin-right: 50px;
-	}
+	}*/
 	.section.shirts ul.products li a {
 		left: 0;
 		width: 100%;
@@ -314,55 +354,51 @@ body {
 		margin-top: 40px;
 		height: auto;
 	}
-	.footer{
-		display: block;
-	}
-}
-@media screen and (max-width: 530px){
-	
-	.header .nav li.cart {
-		position: relative;
-		float: center;
-		margin:0;
-		height: 100%;
-		padding-right: 0%;
-		width: 21%;
-	}
-	
-	.section{
-		width: 100%;
-		float: center;
-	}
 
-	.section .wrapper{
-		width: 100%;
-	}
-
-	.section.shirts ul.products{
-		width: 100%;
-		display: inline-block;
-		text-align: center;
-	}
-	.section.shirts ul.products li {
-		display: inline-block;
-		width: 240px;
-		margin: 0 auto 10px;
-	}
-	.section.shirts ul.products li:nth-child(2n+1){
-		margin-right: 0;
-	}
-	.wrapper h1, .section.page p {
-		width: 90%;
-		margin: 10px 5%;
-		text-align: center;
-	}
 	form, form table{
 		width: 96%;
 		margin: 10px 2%;
+	}
+	.form form table tbody tr th{
+		width: 40px;
 	}
 	form input[type="submit"] {
 		margin: 10px auto;
 		width: 100%;
 		padding: 20px;
 	}
+	.footer{
+		display: block;
+	}
+}
+@media screen and (max-width: 530px){
+	
+
+	
+	/*.section{
+		width: 100%;
+		float: center;
+	}
+	
+	.section .wrapper{
+		width: 100%;
+	}
+	
+	.section.shirts ul.products{
+		width: 100%;
+		display: inline-block;
+		text-align: center;
+	}
+	*/
+	/*.section.shirts ul.products li {
+		display: inline-block;
+		width: 240px;
+		margin: 0 auto 10px;
+	}
+	
+	.section.shirts ul.products li:nth-child(2n+1){
+		margin-right: 0;
+	}
+	*/
+
 }
