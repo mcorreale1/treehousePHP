@@ -1,6 +1,10 @@
-<?php $pageTitle="Information";
+<?php 
+
+require_once('inc/config.php');
+
+$pageTitle="Information";
 $section="info";
-include('inc/header.php');
+include(ROOTPATH.'inc/header.php');
 ?>
 
 	<div class="section page">
@@ -9,4 +13,19 @@ include('inc/header.php');
 		</div>
 	</div>
 
-<?php include('inc/footer.php'); ?>
+	<script>
+
+	$(document).ready(function(){
+	 	$(".footer").hover(function(){
+	   	 	$(this).hide();
+	  	},function(){
+	  		$(this).show();
+	  	});
+	  // 	$(".section.page .wrapper h1").mouseout(function(){
+	  //  	 	$(this).show();
+	  // });
+	});
+
+	</script>
+
+<?php include(ROOTPATH.'inc/footer.php'); ?>

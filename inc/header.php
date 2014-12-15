@@ -7,6 +7,9 @@
 	<link rel="shortcut icon" href="<?php echo BASEURL; ?>favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<!--<script src = "../scripts/jquery/src/jquery.js"></script>-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
 

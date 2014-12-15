@@ -185,7 +185,7 @@ body {
 	margin-left: 4px;
 }
 
-@media screen and (max-width: 852px){
+@media screen and (max-width: 840px){
 	/*
 		FUCKING WITH THE HEADER
 	*/
@@ -371,34 +371,4 @@ body {
 		display: block;
 	}
 }
-@media screen and (max-width: 530px){
-	
 
-	
-	/*.section{
-		width: 100%;
-		float: center;
-	}
-	
-	.section .wrapper{
-		width: 100%;
-	}
-	
-	.section.shirts ul.products{
-		width: 100%;
-		display: inline-block;
-		text-align: center;
-	}
-	*/
-	/*.section.shirts ul.products li {
-		display: inline-block;
-		width: 240px;
-		margin: 0 auto 10px;
-	}
-	
-	.section.shirts ul.products li:nth-child(2n+1){
-		margin-right: 0;
-	}
-	*/
-
-}
