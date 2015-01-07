@@ -522,7 +522,8 @@ body {font-family: 'Oswald', sans-serif; background:#f0eeed; color: #676767;}
     text-align: right;
     background: url('../img/nav-sprite.png') no-repeat 0px 105px;
     text-transform: uppercase;
-    white-space: nowrap; 
+    white-space: nowrap;
+    transition-duration:.5s;
 }
 .header .nav li.on a {text-decoration: underline;}
 .header .nav li a:hover, .header .nav li a:active {color: #FFE200;}
