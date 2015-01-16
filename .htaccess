@@ -12,6 +12,8 @@ RewriteRule ^(shirts/[0-9]+)$ /treehousephp/shirt/$1/ [R=301]
 RewriteRule ^contact/(.*)/(.*)/$ /treehousephp/contact/contact.php?status=$1&name=$2
 RewriteRule ^contact/thanks/$ /treehousephp/contact/(.*)/(.*)/
 
+RewriteRule ^search/$ /treehousephp/search/search.php
+
 RewriteCond %{QUERY_STRING} ^id=([0-9]+)$
 RewriteRule ^shirt.php$ /treehousephp/shirts/%1/? [R=301]
 

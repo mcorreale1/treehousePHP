@@ -1,43 +1,21 @@
 <?php 
 
 require_once('inc/config.php');
-
+include('inc/products.php');
 $pageTitle="Information";
 $section="info";
+$products = get_products_all();
 include(ROOTPATH.'inc/header.php');
 ?>
-`
+
 	<div class="section page">
 		<div class="wrapper">
-			<h1>Information</h1>
-            
-            <pre>
-                <?php
-                    //Testing STR Pos string
-                    echo strpos("cookie dough","oo");
-                ?>
-            </pre>
-            
-            
+			<h1>Information</h1>     
 		</div>
-	</div>
+	</div
 
-	
+<?php
+?>
 
-
-<script>
-
-	$(document).ready(function(){
-	 	$(".h1").mouseenter(function(){
-	   	 	$(this).hide();
-	  	},function(){
-	  		$(this).show();
-	  	});
-	  // 	$(".section.page .wrapper h1").mouseout(function(){
-	  //  	 	$(this).show();
-	  // });
-	});
-
-	</script>
 
 <?php include(ROOTPATH.'inc/footer.php'); ?>
