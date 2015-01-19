@@ -354,6 +354,25 @@ body {
 		margin-top: 40px;
 		height: auto;
 	}
+    
+    
+    /*
+    SEARCH
+    */
+    
+    .section.shirts.search form {
+        height: 80px;
+    }
+    
+    .section.shirts.search form input[type="text"]{
+        width = 70%;
+        margin: 10px 0;
+    }
+    .section.shirts.search form input[type="submit"]{
+        margin: 10px 0;
+        padding: 14px;
+        width: 20%;
+    }
 
 	form, form table{
 		width: 96%;
