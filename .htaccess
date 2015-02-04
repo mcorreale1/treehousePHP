@@ -8,16 +8,13 @@ RewriteRule ^contact.php$ /treehousephp/contact/ [R=301]
 RewriteRule ^shirts.php$ /treehousephp/shirts/ [R=301]
 RewriteRule ^(shirts/[0-9]+)$ /treehousephp/shirt/$1/ [R=301]
 
+Rewriterule ^contact/thanks$ /treehousephp/contact/contact.php
+Rewriterule ^contact/thanks?name=([\w])$ /treehousephp/contact/contact.php?name=$1
 
-RewriteRule ^contact/(.*)/(.*)/$ /treehousephp/contact/contact.php?status=$1&name=$2
-RewriteRule ^contact/thanks/$ /treehousephp/contact/(.*)/(.*)/
+Rewriterule ^shirts/page=([0-9])$ /treehousephp/shirts/shirts.php?page=$1;
+
 
 RewriteRule ^search/$ /treehousephp/search/search.php
 
 RewriteCond %{QUERY_STRING} ^id=([0-9]+)$
 RewriteRule ^shirt.php$ /treehousephp/shirts/%1/? [R=301]
-
-
-
-
-

@@ -63,7 +63,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		if ($mail->send()) {
 			//accessable through $_GET["status"]
 			//status is the variable and thanks is what it holds
-			header("location: ".BASEURL."contact/thanks/$name/");
+            
+            //Send this URL, and rewrite it using rewrite rules
+			header("location: ".BASEURL."contact/thanks?name=".$name);
 			exit;
 
 		}
@@ -95,8 +97,8 @@ include(ROOTPATH.'inc/header.php'); ?>
 			<div class="form">
 				<h1>Contact Us!</h1>
 					<!-- isset() checks if it exists-->
-				<?php if(isset($_GET["status"]) AND $_GET["status"] == "thanks") { ?>
-					<p> Thanks for the email <?php echo $_GET["name"]; ?>! </p>
+				<?php if(isset($_GET["name"])) { ?>
+					<p> Thanks for the email, <?php echo htmlspecialchars($_GET["name"]); ?>! </p>
 
 				<?php } 
 				else { ?>

@@ -1,5 +1,5 @@
 <?php
-
+    
     //Builds an output string for shirts and index
 function get_list_view_html($product){
     //Build HTML output
@@ -83,6 +83,46 @@ function get_products_search($s){
         }
     }
     return $results;
+}
+
+function get_products_search_video($s){
+    $all = get_products_all();
+    $results = array();
+    
+    foreach($all as $product){
+        //stripos() ignores case
+        //!== keeps type and negates
+        if(stripos($product['name'],$s) !== false)
+            $results[] = $product;    
+    }
+    return $results;
+}
+
+function get_products_pages($itemsPerPage){
+    $all = get_products_all();
+    $products = array();
+    
+    //Get # of elements, divide by items per page, round up
+    $pages = ceil(count($all)/$itemsPerPage);
+    
+    //change pages to int type
+    settype($pages, "int");
+    
+    return($pages);
+}
+
+function get_products_page($perPage, $page){
+    $all = get_products_all();
+    $products = array(); 
+    $pages = get_products_pages();
+    $items = count($all);
+    
+//    //Get top and bottom shirts
+//    $start = $items - (($page-1) * $itemsPerPage);
+//    $end = $start + $itemsPerPage;
+    
+    $products = array_slice($all, ($page-1) *$perPage, $perPage);
+    return $products;
 }
 
 function get_products_all(){

@@ -70,3 +70,16 @@ if($name == "" OR $email == "" OR $message ==""){
 if(!$mail->ValidateAddress($email)){
 		echo "You must specify a valid email address";
 	}
+
+depretiated
+
+ for($i = ($page*10)+91; $i < $page*10+101; $i++){
+//                    $product = $products[$i];
+//                    if($product != NULL){
+//                        echo get_list_view_html($product);
+//                    }
+//                    else{
+//                        echo '<br><a href="./">Click to go back to beginnning</a>';
+//                        break;
+//                    }
+//                }

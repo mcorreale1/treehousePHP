@@ -162,10 +162,45 @@ body {
 }
 .section.shirt .page a:hover {color:#FFE200;}
 
+.section.shirts .page.nav {
+    text-align: center;
+    display: inline-block;
+}
+.section.shirts .page.nav a{
+    text-decoration: none;
+    display: inline-block;
+}
+.section.shirts .page.nav a:visited{ color:inherit;}
+.section.shirts .page.nav a:hover{ text-decoration:underline;}
+.section.shirts .page.nav .buttons a{
+    float: center;
+    margin-top: 5px;
+    width: 120px;
+}
+.section.shirts .page.nav .buttons a.prev{  
+    text-align: right;
+    margin-right: 10px;
+}
+.section.shirts .page.nav .buttons a.next{
+    text-align: left;
+    margin-left: 10px;
+}
+
+.section.shirts .page.nav .numbers a {
+    padding: 5px;
+    margin-right: 10px;
+    bottom:0;
+}
+.section.shirts .page.nav .numbers a.on{
+    text-decoration: underline;
+}
+.section.shirts .page.nav .numbers a:last-child{
+    padding-right: 0;
+}
+
 /* 
 	Footer
 */
-
 .footer {
 	padding: 0;
 	height: 120px;
